@@ -344,14 +344,14 @@ class ThePlatform_Plugin {
 		);
 				
 		if ( empty( $width ) ) {
-			$width = (int) $this->preferences['default_width'];
+			$width = (int) $this->preferences['default_width'] ?? 640;
 		}
 		if ( strval( $width ) === '0' ) {
 			$width = 500;
 		}		
 
 		if ( empty( $height ) ) {
-			$height = $this->preferences['default_height'];
+			$height = $this->preferences['default_height'] ?? 320;
 		}
 		if ( strval( $height ) === '0' ) {
 			$height = floor( $width * 9 / 16 );
@@ -365,6 +365,10 @@ class ThePlatform_Plugin {
 
 		if ( empty( $media ) ) {
 			return '<!--Syntax Error: Required Media parameter missing. -->';
+		}
+
+		if ( empty( $player ) ) {
+			$player = $this->preferences['default_player_pid'];
 		}
 
 		if ( empty( $player ) ) {

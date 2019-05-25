@@ -176,7 +176,7 @@ function theplatform_media_clear_styles_and_scripts() {
 					<div id="filter-affix" class="scrollable affix-top">
 						<div id="list-categories" class="list-group">
 							<a class="list-group-item active">
-								Categories
+								Collections
 							</a>
 							<a href="#" class="list-group-item cat-list-selector" style="background-color: #D8E8FF;">All Videos</a>
 						</div>                    

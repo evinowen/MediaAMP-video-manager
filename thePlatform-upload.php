@@ -71,7 +71,7 @@ if ( !defined( 'TP_MEDIA_BROWSER' ) ) {
 	}
 	$media = array();
 
-	echo '<div class="tp"><h1> Upload Media to MPX </h1><div id="media-mpx-upload-form">';
+	echo '<div class="tp"><h1>Upload Media</h1><div id="media-mpx-upload-form">';
 }
 ?>
 

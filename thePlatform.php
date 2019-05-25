@@ -162,8 +162,8 @@ class ThePlatform_Plugin {
 		$tp_uploader_cap = apply_filters( TP_UPLOADER_CAP, TP_UPLOADER_DEFAULT_CAP );
 		$slug = 'theplatform';
 		add_menu_page( 'MediaAMP', 'MediaAMP', $tp_viewer_cap, $slug, array( $this, 'media_page' ), 'dashicons-video-alt3', '10.0912' );
-		add_submenu_page( $slug, 'MediaAMP Video Browser', 'Browse MPX Media', $tp_viewer_cap, $slug, array( $this, 'media_page' ) );
-		add_submenu_page( $slug, 'MediaAMP Video Uploader', 'Upload Media to MPX', $tp_uploader_cap, 'theplatform-uploader', array( $this, 'upload_page' ) );
+		add_submenu_page( $slug, 'MediaAMP Video Browser', 'Browse Media', $tp_viewer_cap, $slug, array( $this, 'media_page' ) );
+		add_submenu_page( $slug, 'MediaAMP Video Uploader', 'Upload Media', $tp_uploader_cap, 'theplatform-uploader', array( $this, 'upload_page' ) );
 		add_submenu_page( $slug, 'MediaAMP Plugin Settings', 'Settings', $tp_admin_cap, 'theplatform-settings', array( $this, 'admin_page' ) );
 		add_submenu_page( $slug, 'MediaAMP Plugin About', 'About', $tp_admin_cap, 'theplatform-about', array( $this, 'about_page' ) );
 	}

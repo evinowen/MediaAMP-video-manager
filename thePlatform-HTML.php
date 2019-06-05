@@ -476,7 +476,7 @@ class ThePlatform_HTML {
 					<option value="">Ascending</option>
 				</select>
 
-				<label for="selectpick-categories">Category:</label>
+				<label for="selectpick-categories">Collections:</label>
 				<select id="selectpick-categories">
 					<option value="">All Videos</option>
 				</select>

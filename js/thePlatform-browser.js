@@ -141,12 +141,27 @@ var theplatform_browser = (function ($) {
             var mediaSource = $("#media-template").html();
             var mediaTemplate = _.template(mediaSource);
 
+            var defaultThumbnailUrl = media.defaultThumbnailUrl;
+            var match = /^\{([A-Za-z0-9:]*)}:\/\/(.*)$/.exec(defaultThumbnailUrl);
+
+            if (match && match.length == 3) {
+                var protocols = String(match[1]).split(':');
+
+                if (protocols.includes('https')) {
+                    defaultThumbnailUrl = String('https://').concat(match[2]);
+                } else if (protocols.includes('http')) {
+                    defaultThumbnailUrl = String('http://').concat(match[2]);
+                }
+
+            }
+
+
             var newMedia = mediaTemplate({
                 id: media.id,
                 guid: media.guid,
                 pid: media.pid,
                 placeHolder: placeHolder,
-                defaultThumbnailUrl: media.defaultThumbnailUrl,
+                defaultThumbnailUrl: defaultThumbnailUrl,
                 title: media.title,
                 description: media.description
             });

@@ -135,7 +135,7 @@ String.prototype.appendParams = function( params ) {
 			continue;
 
 		// if (updatedString.indexOf('?') > -1)
-		updatedString += '&' + key + '=' + params[key];
+		updatedString += '&' + key + '=' + encodeURIComponent(params[key]);
 		// else
 		//     updatedString += '?'+key+'='+params[key];
 	}

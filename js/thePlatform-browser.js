@@ -537,10 +537,16 @@ var theplatform_browser = (function ($) {
         },
         buildMediaQuery: function (data) {
             var queryParams = '';
-            if (data.category)
+            if (data.category) {
+                var category = String(data.category);
+
+                category = category.replace(':', '\\:');
+                category = category.replace(',', '\\,');
+
                 queryParams = queryParams.appendParams({
-                    byCategories: data.category
+                    byCategories: category
                 });
+            }
 
             if (data.search) {
                 queryParams = queryParams.appendParams({

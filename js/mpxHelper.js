@@ -41,8 +41,14 @@ var mpxHelper = {
 	buildMediaQuery: function( data ) {
 
 		var queryParams = '';
-		if ( data.category )
-			queryParams = queryParams.appendParams( { byCategories: data.category } );
+		if ( data.category ) {
+			var category = String(data.category);
+
+			category = category.replace(':', '\\:');
+			category = category.replace(',', '\\,');
+
+			queryParams = queryParams.appendParams( { byCategories: category } );
+		}
 
 		if ( data.search ) {
 			queryParams = queryParams.appendParams( { q: encodeURIComponent( data.search ) } );

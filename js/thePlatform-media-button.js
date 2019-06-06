@@ -1,11 +1,6 @@
 /* thePlatform Video Manager Wordpress Plugin
-<<<<<<< HEAD
- Copyright (C) 2013-2014 thePlatform for Media Inc.
- 
-=======
  Copyright (C) 2013-2015 thePlatform, LLC
 
->>>>>>> c7e091ff00cd062220e051583dfeb47d2d5822c7
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation; either version 2 of the License, or
@@ -18,29 +13,15 @@
 
  You should have received a copy of the GNU General Public License along
  with this program; if not, write to the Free Software Foundation, Inc.,
- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. 
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA. */
 
- Changes
- ========================================
-
- qaz2wsx3@uw.edu: changed the icon on the post editor's toolbar
-
-*/
-
-tinymce.PluginManager.add('theplatform', function (editor, url) {
-    // Add a button that opens a window
-    editor.addButton('theplatform', {
-        tooltip: 'Embed MPX Media',
-        image: url.substring(0, url.lastIndexOf('/js')) + '/images/MediaAMP_button_icon.png',
-        onclick: function () {
+(function ($) {
+    $(document).ready(function () {
+        $('#theplatform-media-button').click(function () {
             wp.media({
                 frame: 'post',
                 state: 'iframe:theplatform'
             }).open();
-        }
+        });
     });
-});
-
-tinymce.init({
-    plugins: 'theplatform'
-});
+})(jQuery);

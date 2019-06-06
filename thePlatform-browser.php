@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $account = get_option( TP_ACCOUNT_OPTIONS_KEY );
 if ( $account == false || empty( $account['mpx_account_id'] ) ) {
-	wp_die( '<div class="error"><p>mpx Account ID is not set, please configure the plugin before attempting to manage media</p></div>' );
+	wp_die( '<div class="error"><p>MPX Account ID is not set, please configure the plugin before attempting to manage media</p></div>' );
 }
 
 define( 'TP_MEDIA_BROWSER', true );
@@ -30,7 +30,7 @@ define( 'TP_MEDIA_BROWSER', true );
 $tp_editor_cap = apply_filters( TP_EDITOR_CAP, TP_EDITOR_DEFAULT_CAP );
 
 if ( ! current_user_can( $tp_editor_cap ) ) {
-	wp_die( '<div class="error"><p>You do not have sufficient permissions to browse mpx Media</p></div>' );
+	wp_die( '<div class="error"><p>You do not have sufficient permissions to browse MediaAMP Media</p></div>' );
 }
 
 require_once( dirname( __FILE__ ) . '/thePlatform-HTML.php' );
@@ -46,7 +46,7 @@ $IS_EMBED = $page_hook != 'toplevel_page_theplatform';
 
 <div class="wrap">
 	<?php if ( ! $IS_EMBED ) {
-		echo '<h2>mpx Video Manager</h2>';
+		echo '<h2>MediaAMP: Browse Media</h2>';
 	} ?>
 
 	<!-- Write out the search bar -->
@@ -135,7 +135,7 @@ if ( ! $IS_EMBED && current_user_can( $tp_editor_cap )) {
 	</script>
 
 	<script id="shortcode-template" type="text/template">
-		[theplatform account="<%= account %>" media="<%= release %>" player="<%= player %>"]
+		[mediaamp account="<%= account %>" media="<%= release %>" player="<%= player %>"]
 	</script>
 
 	<script id="error-template" type="text/template">
